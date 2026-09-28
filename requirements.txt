@@ -1,0 +1,8 @@
+numpy
+scipy
+cvxpy
+matplotlib
+pandas
+seaborn
+psutil
+fbm

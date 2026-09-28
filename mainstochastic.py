@@ -1,5 +1,5 @@
 from gamestochastic import Stochastic_Game
-from main2 import main
+from main import main
 from game import Game
 import numpy as np
 import matplotlib.pyplot as plt
@@ -12,12 +12,12 @@ import psutil
 import sys
 
 # Directory where we want to save the plots
-save_dir = r"C:\Users\asakr\Desktop\test"
+save_dir = "To complete"
 # Ensure the directory exists
 os.makedirs(save_dir, exist_ok=True)
 
 # Path for the output log file
-output_file_path = os.path.join(save_dir, 'output.txt')
+output_file_path = os.path.join(save_dir, 'test.txt')
 sys.stdout = open(output_file_path, 'w')
 
 def log_resource_usage():
@@ -28,7 +28,7 @@ def log_resource_usage():
     print(f"Memory usage: {memory_info.percent}%")
     print(f"Available memory: {memory_info.available / (1024 ** 3):.2f} GB")
 
-def main_logic(csi=0.03, players_number=6, horizon=1):  # 0.0001=csi
+def main_logic(csi=0.03, players_number=3, horizon=1):  # 0.0001=csi
     start = time.time()
     beta_centr = 0.0000006
     print(f"Running simulation with benefit factor={beta_centr}")
@@ -70,7 +70,7 @@ def main_logic(csi=0.03, players_number=6, horizon=1):  # 0.0001=csi
         print("Delta Upper Bound:", delta_upper)
 
         # Print all allocations for all coalitions, including the final one
-        print("Total number of allocations:", len(all_allocations))
+        #print("Total number of allocations:", len(all_allocations))
         for idx, allocation in enumerate(all_allocations):
             print(f"Coalition {idx + 1}: {allocation}")
 
